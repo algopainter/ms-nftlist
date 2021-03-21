@@ -44,12 +44,14 @@ loadAllItems = async (contract, network) => {
                     owner,
                     isError: false,
                     tokenURI,
+                    tokenId,
                 }
             } catch (e) {
                 db[key][i] = {
                     tokenURI,
                     owner,
                     isError: true,
+                    tokenId,
                     error: e.toString(),
                 }
             }
@@ -96,6 +98,7 @@ loadItemsByOwner = async (contract, network, owner) => {
                     owner,
                     isError: false,
                     tokenURI,
+                    tokenId,
                 }
             } catch (e) {
                 db[key][index] = {
@@ -103,6 +106,7 @@ loadItemsByOwner = async (contract, network, owner) => {
                     owner,
                     isError: true,
                     error: e.toString(),
+                    tokenId,
                 }
             }
         } else {
