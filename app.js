@@ -13,6 +13,7 @@ const db = {
     'network_1': [],
     'network_3': [],
     'network_5777': [],
+    'network_56': [],
 };
 
 const defaultAxios = axios.create({
@@ -125,6 +126,7 @@ app.get('/', async (req, res) => {
         networks[3] = process.env.ROPSTEN_RPC_URL;
         networks[1] = process.env.MAINNET_RPC_URL;
         networks[5777] = process.env.GANACHE_RPC_URL;
+        networks[56] = process.env.BSC_RPC_URL;
 
         res.setHeader('Content-Type', 'application/json');
 
