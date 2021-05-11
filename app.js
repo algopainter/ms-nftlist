@@ -37,6 +37,10 @@ loadAllItems = async (contract, network) => {
             const tokenURI = await contract.methods.tokenURI(tokenId).call();
             const owner = await contract.methods.ownerOf(tokenId).call();
             console.log(`Loading JSON from ${tokenURI}`);
+
+            console.log({
+                tokenId,
+            })
             
             try {
                 const json = (await defaultAxios.get(tokenURI)).data;
@@ -137,7 +141,7 @@ app.get('/', async (req, res) => {
         console.log(`Connecting to ${rpcURl} and querying the contract ${contractAddress}`);
 
         const web3 = new Web3(rpcURl);
-        const contract = new web3.eth.Contract(ERC721.abi, contractAddress);
+        const contract = new web3.eth.Contract(ERC721, contractAddress);
 
         const items = owner ? await loadItemsByOwner(contract, network, owner) : await loadAllItems(contract, network);
 
