@@ -1,6 +1,6 @@
-import Mongoose from 'mongoose';
+const Mongoose = require('mongoose');
 
-export const ImageSchema = Mongoose.Schema({
+module.exports.ImageSchema = Mongoose.Schema({
   artist: {
     name: {
       type: String,
@@ -74,4 +74,4 @@ export const ImageSchema = Mongoose.Schema({
   },
 });
 
-export const ImageSet = Mongoose.model('images', ImageSchema);
+module.exports.ImageSet = Mongoose.model('images', ImageSchema);

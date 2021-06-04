@@ -1,7 +1,7 @@
-import Mongoose from 'mongoose';
-import Settings from '../config/settings.js';
+const Mongoose = require('mongoose');
+const Settings = require('../config/settings.js');
 
-export default class Context {
+module.exports = class Context {
   static async connect() {
     return await Mongoose.connect(Settings.db.mongoUrl, {
       useNewUrlParser: true, 

@@ -1,7 +1,7 @@
-import Context from "../domain/context.js";
-import { ImageSet } from "../domain/image.js";
+const Context = require("../domain/context.js");
+const { ImageSet } = require("../domain/image.js");
 
-const handler = async function(event, context) {
+module.exports.handler = async function(event, context) {
   await Context.connect();
   const images = await ImageSet.find().sort({ supplyIndex: -1 });
 
@@ -11,4 +11,4 @@ const handler = async function(event, context) {
   };
 }
 
-export { handler };
+ 
