@@ -74,4 +74,4 @@ module.exports.ImageSchema = Mongoose.Schema({
   },
 });
 
-module.exports.ImageSet = Mongoose.model('images', ImageSchema);
+module.exports.ImageSet = Mongoose.model('images', module.exports.ImageSchema);
