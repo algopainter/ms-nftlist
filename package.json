@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node test.js"
+    "start": "netlify functions:serve --functions ./src/functions"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "mongoose": "^5.12.12"
+  },
+  "devDependencies": {
+    "netlify-cli": "^3.37.36"
   }
 }
