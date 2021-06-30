@@ -8,4 +8,8 @@ module.exports = class Context {
       useUnifiedTopology: true
     });
   }
+
+  static async disconnect() {
+    await Mongoose.disconnect();
+  }
 }
